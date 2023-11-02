@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Disparo : MonoBehaviour
 {
-    [SerializeField] private Transform controladorDisparo;
+
+    [SerializeField] public Transform controladorDisparo;
+
 
     [SerializeField] private GameObject bala;
     public float velocidad;
@@ -13,6 +15,12 @@ public class Disparo : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+
+        //Los disparos se hacen con las flechas, para esto se deben cambiar los valores de los Inputs de "Fire1" y "Fire2" desde Unity
+        //La ruta es Edit<Project Settigns<Input Manager
+        //Dentro al Fire1 le debe poner en Negative Button "down" y a Positive Button "up"
+        //A Fire2 le debe poner en el Negative Button "left" y al Positive Button "right
+        //Además de borrar "down", "up", "left" y "right" de "Horizontal" y "Vertical"
 
         if (Input.GetButtonDown("Fire1"))
         {

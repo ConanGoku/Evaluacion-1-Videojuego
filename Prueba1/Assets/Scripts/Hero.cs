@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Hero : MonoBehaviour    
 {
-    public float velocidad;
+    public float velocidadHero;
     Rigidbody2D cuerpo;
 
     // Start is called before the first frame update
     void Start()
     {
-        velocidad = 10;
+        velocidadHero = 10;
 
         cuerpo = GetComponent<Rigidbody2D>();
     }
@@ -22,14 +22,14 @@ public class Hero : MonoBehaviour
         float movHorizontal = Input.GetAxis("Horizontal");
         float movVertical = Input.GetAxis("Vertical");
 
-        cuerpo.velocity = new Vector2(movHorizontal, movVertical) * velocidad;
+        cuerpo.velocity = new Vector2(movHorizontal, movVertical) * velocidadHero;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("EditorOnly"))
         {
-            velocidad = 30;
+            velocidadHero = 30;
             other.GetComponent<CoinFast>().DestruirCoin();
         }
     }
