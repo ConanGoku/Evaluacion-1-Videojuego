@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Hero : MonoBehaviour    
 {
-
     public float velocidad;
     Rigidbody2D cuerpo;
 
@@ -24,5 +23,14 @@ public class Hero : MonoBehaviour
         float movVertical = Input.GetAxis("Vertical");
 
         cuerpo.velocity = new Vector2(movHorizontal, movVertical) * velocidad;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("EditorOnly"))
+        {
+            velocidad = 30;
+            other.GetComponent<CoinFast>().DestruirCoin();
+        }
     }
 }

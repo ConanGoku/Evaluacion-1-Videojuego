@@ -342,6 +342,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
 "Assets/Scripts/bala.cs"
+"Assets/Scripts/CoinFast.cs"
 "Assets/Scripts/Disparo.cs"
 "Assets/Scripts/Enemigo.cs"
 "Assets/Scripts/Hero.cs"
